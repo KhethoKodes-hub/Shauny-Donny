@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Shauny and Donny Trading and Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #00d4ff;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00d4ff;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00d4ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .about-hero {
+            margin-top: 80px;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .about-hero-content {
+            max-width: 900px;
+            z-index: 1;
+        }
+
+        .about-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 30px;
+        }
+
+        h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #00d4ff;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #00d4ff;
+        }
+
+        .about-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            line-height: 1.8;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .about-content p {
+            margin-bottom: 25px;
+        }
+
+        .company-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .highlight-card:hover::before {
+            left: 100%;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .highlight-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #00d4ff;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover .highlight-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .highlight-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .highlight-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .company-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:hover {
+            border-color: #00d4ff;
+            transform: translateY(-5px);
+        }
+
+        .detail-card h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #00d4ff;
+            display: flex;
+            align-items: center;
+        }
+
+        .detail-card h3 i {
+            margin-right: 10px;
+        }
+
+        .detail-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #00d4ff;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            color: #e0e0e0;
+        }
+
+        .team-section {
+            margin-top: 80px;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+        }
+
+        .member-name {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .member-position {
+            font-size: 18px;
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+
+        .member-details {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            text-align: center;
+            padding: 40px;
+            margin-top: 80px;
+            border-top: 2px solid #00d4ff;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            color: #00d4ff;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #00d4ff;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 36px;
+            }
+            
+            .about-hero p {
+                font-size: 18px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            h2 {
+                font-size: 32px;
+            }
+            
+            .about-content {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <i class="fas fa-hard-hat"></i>
+                S&D TRADING
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <div class="about-hero-bg"></div>
+        <div class="about-hero-content">
+            <h1>About Our Company</h1>
+            <p>Building a legacy of excellence, innovation, and trust in South Africa's construction and project management industry</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Our Story</h2>
+        <div class="about-content">
+            <p>Shauny and Donny Trading and Projects (Pty) Ltd is a dynamic and versatile private company registered in South Africa (Registration Number: 2025/511366/07). Founded in June 2025, we operate from our headquarters at 1 Grobbler Street, Westerburg, Polokwane, Limpopo.</p>
+            
+            <p>As a B-BBEE Exempted Micro Enterprise, we are committed to contributing to South Africa's economic transformation while delivering exceptional services to our clients. Our business activities are not restricted, allowing us to adapt and excel across multiple sectors including construction, maintenance, cleaning services, and comprehensive project management.</p>
+            
+            <p>Under the leadership of Director Thévie Cynthia Gngbu, our team brings professional expertise and dedication to every project. We pride ourselves on our compliance with South African business regulations and our commitment to ethical business practices.</p>
+            
+            <p>With our financial year ending in November, we maintain transparent financial practices and are positioned for sustainable growth and long-term partnerships with our clients across South Africa.</p>
+        </div>
+
+        <div class="company-highlights">
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>To deliver exceptional construction and project management services that exceed client expectations while contributing positively to South Africa's economic development.</p>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>To become the leading provider of integrated trading and project solutions in South Africa, recognized for quality, innovation, and transformative impact.</p>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Our Values</h3>
+                <p>Integrity, Quality, Innovation, Customer Focus, and Commitment to Economic Transformation through B-BBEE compliance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="company-info">
+        <h2>Company Information</h2>
+        <div class="company-details">
+            <div class="detail-card">
+                <h3><i class="fas fa-building"></i> Registration Details</h3>
+                <div class="detail-item">
+                    <span class="detail-label">Enterprise Name</span>
+                    <span class="detail-value">SHAUNY AND DONNY TRADING AND PROJECTS (PTY) LTD</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Registration Number</span>
+                    <span class="detail-value">2025/511366/07</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Registration Date</span>
+                    <span class="detail-value">27 June 2025</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Enterprise Type</span>
+                    <span class="detail-value">Private Company</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Enterprise Status</span>
+                    <span class="detail-value">In Business</span>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <h3><i class="fas fa-map-marker-alt"></i> Location Details</h3>
+                <div class="detail-item">
+                    <span class="detail-label">Registered Office</span>
+                    <span class="detail-value">1 Grobbler Street, Westerburg, Polokwane, Limpopo, 0699</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Company Location of Records</span>
+                    <span class="detail-value">1 Grobbler Street, Westerburg, Polokwane, Limpopo, 0699</span>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <h3><i class="fas fa-chart-line"></i> Business Details</h3>
+                <div class="detail-item">
+                    <span class="detail-label">Financial Year End</span>
+                    <span class="detail-value">November</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Type of MOI</span>
+                    <span class="detail-value">STANDARD (COR15.1A)</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Main Business/Object</span>
+                    <span class="detail-value">Business Activities Not Restricted</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">B-BBEE Status</span>
+                    <span class="detail-value">Exempted Micro Enterprise</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <h2>Our Leadership</h2>
+        <div class="team-member">
+            <div class="member-photo">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <h3 class="member-name">Thévie Cynthia Gngbu</h3>
+            <div class="member-position">Director</div>
+            <div class="member-details">
+                <p>Appointed: 27 June 2025</p>
+                <p>ID Number: 55/04/2014/9245</p>
+                <p>Address: 541 Kome Street, Nwa Guoa Ext 2, Emajja-En, Mpumalanga, 1035</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 1 Grobbler Street, Westerburg, Polokwane, Limpopo, 0699</p>
+                <p><i class="fas fa-phone"></i> +27 12 345 6789</p>
+                <p><i class="fas fa-envelope"></i> info@shaunyanddonny.co.za</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="#about">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p>Registration: 2025/511366/07</p>
+                <p>B-BBEE: Exempted Micro Enterprise</p>
+                <p>VAT: Not Registered</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Shauny and Donny Trading and Projects (Pty) Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
