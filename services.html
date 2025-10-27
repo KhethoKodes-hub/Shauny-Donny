@@ -428,12 +428,53 @@
             font-size: 18px;
         }
 
-        footer {
+          footer {
             background: rgba(10, 10, 10, 0.95);
             text-align: center;
-            padding: 40px;
+            padding: 60px 40px 40px;
             margin-top: 80px;
             border-top: 2px solid #00d4ff;
+        }
+
+        .footer-logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            height: 180px;
+            width: auto;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00d4ff;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo-subtitle {
+            font-size: 18px;
+            color: #ccc;
+            text-align: center;
+            max-width: 600px;
         }
 
         .footer-content {
@@ -462,6 +503,7 @@
         .footer-section a:hover {
             color: #00d4ff;
         }
+
 
         .copyright {
             margin-top: 40px;
@@ -508,7 +550,7 @@
     <header id="header">
         <nav>
             <div class="logo">
-                <i ></i><a><img src="assets/Shauny & donnylogo.png" height="80" width="80"></a>
+                <i ></i><a><img src="assets/shany&donnyLogo.png" height="80" width="80"></a>
                
             </div>
             <ul class="nav-links">
@@ -709,7 +751,15 @@
         <a href="contact.html" class="cta-button large">Get Started Today</a>
     </section>
 
-    <footer>
+   <footer>
+        <div class="footer-logo-section">
+            <div class="footer-logo">
+                <img src="assets/shany&donnyLogo.png" alt="Shauny and Donny Logo">
+                <div class="footer-logo-text">Shauny and Donny Trading and Projects (Pty) Ltd</div>
+                <div class="footer-logo-subtitle">Building Excellence, Delivering Results</div>
+            </div>
+        </div>
+        
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contact Us</h3>
@@ -721,7 +771,7 @@
                 <h3>Quick Links</h3>
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
-                <a href="#services">Services</a>
+                <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
             </div>
             <div class="footer-section">
