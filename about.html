@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Shauny and Donny Trading and Projects</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>About Us - Shauny and Donny Tradings and Projects (Pty) Ltd</title>
     <style>
         * {
             margin: 0;
@@ -13,655 +12,1297 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-            color: #fff;
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            background: #0a0a0a;
         }
 
-        header {
-            background: rgba(10, 10, 10, 0.95);
-            padding: 20px 0;
+        /* Modern Gradient Color Scheme */
+        :root {
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --gradient-6: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            --gradient-green: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --gradient-orange: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%);
+            --gradient-purple: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-light: #ffffff;
+            --text-dark: #1a1a1a;
+        }
+
+        /* Navigation */
+        nav {
             position: fixed;
             width: 100%;
-            top: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem 5%;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid #00d4ff;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
+        nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 30px;
+            max-width: 1600px;
+            margin: 0 auto;
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #00d4ff;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo i {
-            margin-right: 10px;
-            font-size: 32px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            position: relative;
-            padding: 5px 0;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00d4ff;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #00d4ff;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .about-hero {
-            margin-top: 80px;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            opacity: 0.2;
-            z-index: -1;
-        }
-
-        .about-hero-content {
-            max-width: 900px;
-            z-index: 1;
-        }
-
-        .about-hero h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--gradient-green);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
         }
 
-        .about-hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            color: #e0e0e0;
-            line-height: 1.6;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
         }
 
-        section {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 30px;
-        }
-
-        h2 {
-            font-size: 42px;
-            margin-bottom: 40px;
-            text-align: center;
-            color: #00d4ff;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: #00d4ff;
-        }
-
-        .about-content {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 50px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            line-height: 1.8;
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-
-        .about-content p {
-            margin-bottom: 25px;
-        }
-
-        .company-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .highlight-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            transition: all 0.4s ease;
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
             position: relative;
             overflow: hidden;
         }
 
-        .highlight-card::before {
+        nav a::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
-            transition: left 0.6s;
+            background: var(--gradient-green);
+            transition: left 0.3s ease;
+            z-index: -1;
+            border-radius: 30px;
         }
 
-        .highlight-card:hover::before {
-            left: 100%;
+        nav a:hover::before {
+            left: 0;
         }
 
-        .highlight-card:hover {
-            transform: translateY(-10px);
-            border-color: #00d4ff;
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
-        }
-
-        .highlight-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #00d4ff;
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-
-        .highlight-card:hover .highlight-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
-
-        .highlight-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .highlight-card p {
-            color: #ccc;
-            line-height: 1.6;
-        }
-
-        .company-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .detail-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .detail-card:hover {
-            border-color: #00d4ff;
-            transform: translateY(-5px);
-        }
-
-        .detail-card h3 {
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: #00d4ff;
-            display: flex;
-            align-items: center;
-        }
-
-        .detail-card h3 i {
-            margin-right: 10px;
-        }
-
-        .detail-item {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .detail-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .detail-label {
-            font-weight: bold;
-            color: #00d4ff;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .detail-value {
-            color: #e0e0e0;
-        }
-
-        .team-section {
-            margin-top: 80px;
-        }
-
-        .team-member {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            transition: all 0.3s ease;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .team-member:hover {
-            transform: translateY(-10px);
-            border-color: #00d4ff;
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
-        }
-
-        .member-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
+        nav a:hover {
+            transform: translateY(-2px);
             color: white;
         }
 
-        .member-name {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .member-position {
-            font-size: 18px;
-            color: #00d4ff;
-            margin-bottom: 15px;
-        }
-
-        .member-details {
-            color: #ccc;
-            line-height: 1.6;
-        }
-
-         footer {
-            background: rgba(10, 10, 10, 0.95);
-            text-align: center;
-            padding: 60px 40px 40px;
-            margin-top: 80px;
-            border-top: 2px solid #00d4ff;
-        }
-
-        .footer-logo-section {
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--dark-bg);
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            margin-bottom: 40px;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            padding: 0 5%;
         }
 
-        .footer-logo {
-            margin-bottom: 20px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            top: -25%;
+            left: -25%;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.8)), 
+                        url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600') center/cover;
+            opacity: 1;
+            z-index: 0;
+        }
+
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--gradient-green);
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--gradient-orange);
+            bottom: 20%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: var(--gradient-4);
+            top: 50%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -2px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+        }
+
+        .hero-badges {
             display: flex;
-            flex-direction: column;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--gradient-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(17, 153, 142, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+            transition: left 0.4s ease;
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(17, 153, 142, 0.6);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 8rem 5%;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--gradient-green);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        #about {
+            background: var(--dark-bg);
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
             align-items: center;
         }
 
-        .footer-logo img {
-            height: 180px;
-            width: auto;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
+        .about-content {
+            position: relative;
         }
 
-        .footer-logo img:hover {
+        .about-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        .about-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .about-img {
+            height: 250px;
+            border-radius: 25px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .about-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(17, 153, 142, 0.4) 0%, rgba(56, 239, 125, 0.4) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .about-img:hover::before {
+            opacity: 1;
+        }
+
+        .about-img:hover {
             transform: scale(1.05);
         }
 
-        .footer-logo-text {
-            font-size: 28px;
-            font-weight: bold;
-            color: #00d4ff;
-            text-align: center;
-            margin-bottom: 10px;
+        .about-img:nth-child(1) {
+            background-image: url('https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800');
+            grid-row: span 2;
+            height: 520px;
         }
 
-        .footer-logo-subtitle {
-            font-size: 18px;
-            color: #ccc;
-            text-align: center;
-            max-width: 600px;
+        .about-img:nth-child(2) {
+            background-image: url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800');
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        .about-img:nth-child(3) {
+            background-image: url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800');
+        }
+
+        /* Vision & Mission Cards */
+        .vm-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: left;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 5rem;
         }
 
-        .footer-section h3 {
-            color: #00d4ff;
-            margin-bottom: 20px;
-            font-size: 20px;
+        .vm-card {
+            padding: 3rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
         }
 
-        .footer-section p, .footer-section a {
-            color: #ccc;
-            margin-bottom: 10px;
-            display: block;
+        .vm-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--gradient-green);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .vm-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .vm-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .vm-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .vm-card h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .vm-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Values Section */
+        #values {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #values::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            padding: 2.5rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-green);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        .value-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .value-card:hover {
+            transform: translateY(-15px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(17, 153, 142, 0.3);
+        }
+
+        .value-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover .value-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--dark-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-green);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .service-card:hover {
+            transform: translateY(-20px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .service-card:hover .service-image {
+            transform: scale(1.1);
+        }
+
+        .service-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-green);
+            opacity: 0.3;
+            mix-blend-mode: multiply;
+            z-index: 1;
+        }
+
+        .poultry-bg {
+            background-image: url('https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800');
+        }
+
+        .livestock-bg {
+            background-image: url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800');
+        }
+
+        .crop-bg {
+            background-image: url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800');
+        }
+
+        .service-content {
+            padding: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-content h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: left 0.3s ease;
+        }
+
+        .service-list li:hover {
+            padding-left: 2.5rem;
+            color: white;
+        }
+
+        .service-list li:hover::before {
+            left: 0.5rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600') center/cover;
+            opacity: 0.05;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contact-info-section {
+            position: relative;
+        }
+
+        .contact-info-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 20px;
+            background: var(--gradient-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon-wrapper {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .contact-details h4 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details a,
+        .contact-details p {
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: color 0.3s;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
-        .footer-section a:hover {
-            color: #00d4ff;
+        .contact-details a:hover {
+            color: white;
         }
 
+        .contact-form-wrapper {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-        .copyright {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #999;
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: rgba(17, 153, 142, 0.6);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 4px rgba(17, 153, 142, 0.1);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.3rem;
+            background: var(--gradient-green);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(17, 153, 142, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+            transition: left 0.4s ease;
+        }
+
+        .submit-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .submit-button:hover::before {
+            left: 0;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(17, 153, 142, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #050505;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 3rem 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .about-grid,
+            .vm-container,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            .about-hero h1 {
-                font-size: 36px;
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            
-            .about-hero p {
-                font-size: 18px;
+
+            .section-title {
+                font-size: 2.5rem;
             }
-            
-            .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
+
+            nav ul {
+                display: none;
             }
-            
-            h2 {
-                font-size: 32px;
+
+            .hero-badges {
+                flex-direction: column;
             }
-            
-            .about-content {
-                padding: 30px;
+
+            .about-image-grid {
+                grid-template-columns: 1fr;
             }
+
+            .about-img:nth-child(1) {
+                height: 300px;
+                grid-row: span 1;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <header id="header">
-        <nav>
-            <div class="logo">
-                <i ></i><a><img src="assets/shany&donnyLogo.png" height="80" width="80"></a>
-               
-            </div>
-            <ul class="nav-links">
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">S&D</div>
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <section class="about-hero">
-        <div class="about-hero-bg"></div>
-        <div class="about-hero-content">
-            <h1>About Our Company</h1>
-            <p>Building a legacy of excellence, innovation, and trust in South Africa's construction and project management industry</p>
         </div>
-    </section>
+    </nav>
 
-    <section id="about">
-        <h2>Our Story</h2>
-        <div class="about-content">
-            <p>Shauny and Donny Trading and Projects (Pty) Ltd is a dynamic and versatile private company registered in South Africa (Registration Number: 2025/511366/07). Founded in June 2025, we operate from our headquarters at 1 Grobbler Street, Westerburg, Polokwane, Limpopo.</p>
-            
-            <p>As a B-BBEE Exempted Micro Enterprise, we are committed to contributing to South Africa's economic transformation while delivering exceptional services to our clients. Our business activities are not restricted, allowing us to adapt and excel across multiple sectors including construction, maintenance, cleaning services, and comprehensive project management.</p>
-            
-            <p>Under the leadership of Director Thévie Cynthia Gngbu, our team brings professional expertise and dedication to every project. We pride ourselves on our compliance with South African business regulations and our commitment to ethical business practices.</p>
-            
-            <p>With our financial year ending in November, we maintain transparent financial practices and are positioned for sustainable growth and long-term partnerships with our clients across South Africa.</p>
-        </div>
-
-        <div class="company-highlights">
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <i class="fas fa-bullseye"></i>
-                </div>
-                <h3>Our Mission</h3>
-                <p>To deliver exceptional construction and project management services that exceed client expectations while contributing positively to South Africa's economic development.</p>
-            </div>
-
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <h3>Our Vision</h3>
-                <p>To become the leading provider of integrated trading and project solutions in South Africa, recognized for quality, innovation, and transformative impact.</p>
-            </div>
-
-            <div class="highlight-card">
-                <div class="highlight-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <h3>Our Values</h3>
-                <p>Integrity, Quality, Innovation, Customer Focus, and Commitment to Economic Transformation through B-BBEE compliance.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="company-info">
-        <h2>Company Information</h2>
-        <div class="company-details">
-            <div class="detail-card">
-                <h3><i class="fas fa-building"></i> Registration Details</h3>
-                <div class="detail-item">
-                    <span class="detail-label">Enterprise Name</span>
-                    <span class="detail-value">SHAUNY AND DONNY TRADING AND PROJECTS (PTY) LTD</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Registration Number</span>
-                    <span class="detail-value">2025/511366/07</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Registration Date</span>
-                    <span class="detail-value">27 June 2025</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Enterprise Type</span>
-                    <span class="detail-value">Private Company</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Enterprise Status</span>
-                    <span class="detail-value">In Business</span>
-                </div>
-            </div>
-
-            <div class="detail-card">
-                <h3><i class="fas fa-map-marker-alt"></i> Location Details</h3>
-                <div class="detail-item">
-                    <span class="detail-label">Registered Office</span>
-                    <span class="detail-value">1 Grobbler Street, Westerburg, Polokwane, Limpopo, 0699</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Company Location of Records</span>
-                    <span class="detail-value">1 Grobbler Street, Westerburg, Polokwane, Limpopo, 0699</span>
-                </div>
-            </div>
-
-            <div class="detail-card">
-                <h3><i class="fas fa-chart-line"></i> Business Details</h3>
-                <div class="detail-item">
-                    <span class="detail-label">Financial Year End</span>
-                    <span class="detail-value">November</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Type of MOI</span>
-                    <span class="detail-value">STANDARD (COR15.1A)</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Main Business/Object</span>
-                    <span class="detail-value">Business Activities Not Restricted</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">B-BBEE Status</span>
-                    <span class="detail-value">Exempted Micro Enterprise</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="team-section">
-        <h2>Our Leadership</h2>
-        <div class="team-member">
-            <div class="member-photo">
-                <i class="fas fa-user-tie"></i>
-            </div>
-            <h3 class="member-name">Thévie Cynthia Gngbu</h3>
-            <div class="member-position">Director</div>
-            <div class="member-details">
-                <p>Appointed: 27 June 2025</p>
-                <p>ID Number: 55/04/2014/9245</p>
-                <p>Address: 541 Kome Street, Nwa Guoa Ext 2, Emajja-En, Mpumalanga, 1035</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-logo-section">
-            <div class="footer-logo">
-                <img src="assets/shany&donnyLogo.png" alt="Shauny and Donny Logo">
-                <div class="footer-logo-text">Shauny and Donny Trading and Projects (Pty) Ltd</div>
-                <div class="footer-logo-subtitle">Building Excellence, Delivering Results</div>
-            </div>
-        </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-image"></div>
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
         
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 1 Grobbler Street, Westerburg, Polokwane, Limpopo, 0699</p>
-                <p><i class="fas fa-phone"></i> +27 12 345 6789</p>
-                <p><i class="fas fa-envelope"></i> info@shaunyanddonny.co.za</p>
+        <div class="hero-content">
+            <h1>About Our Company</h1>
+            <p class="subtitle">Pioneering Sustainable Agriculture | Premium Quality Production | Community Nourishment</p>
+            
+            <div class="hero-badges">
+                <div class="badge">🐔 Poultry Excellence</div>
+                <div class="badge">🐄 Livestock Management</div>
+                <div class="badge">🌾 Crop Innovation</div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <p>Registration: 2025/511366/07</p>
-                <p>B-BBEE: Exempted Micro Enterprise</p>
-                <p>VAT: Not Registered</p>
+
+            <div class="cta-buttons">
+                <a href="#about" class="cta-button"><span>Learn More</span></a>
+                <a href="#services" class="cta-button cta-secondary"><span>Our Services</span></a>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2025 Shauny and Donny Trading and Projects (Pty) Ltd. All rights reserved.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Who We Are</div>
+                <h2 class="section-title">Leading Agricultural Excellence</h2>
+                <p class="section-subtitle">A proudly South African enterprise dedicated to sustainable farming and quality production</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content">
+                    <p class="about-text">
+                        Shauny and Donny Tradings and Projects (Pty) Ltd is a proudly South African agricultural enterprise dedicated to the sustainable production of poultry, livestock, eggs, and crops. We are committed to innovation, quality, and ethical farming practices that promote community nourishment and contribute to a thriving agricultural sector.
+                    </p>
+                    <p class="about-text">
+                        Our operations combine traditional farming expertise with modern technologies to ensure consistent quality, high yield, and environmental responsibility.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Quality Standards</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Core Services</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">SA</div>
+                            <div class="stat-label">Proudly South African</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image-grid">
+                    <div class="about-img"></div>
+                    <div class="about-img"></div>
+                    <div class="about-img"></div>
+                </div>
+            </div>
+
+            <div class="vm-container">
+                <div class="vm-card">
+                    <div class="vm-icon">🎯</div>
+                    <h3>Our Vision</h3>
+                    <p>To be a leading integrated agricultural enterprise recognized for delivering premium-quality poultry, eggs, livestock, and crops that nourish communities, promote sustainable farming, and support the growth of the agricultural industry for the benefit of both people and the planet.</p>
+                </div>
+                <div class="vm-card">
+                    <div class="vm-icon">🚀</div>
+                    <h3>Our Mission</h3>
+                    <p>To sustainably produce high-quality poultry, livestock, eggs, and crops while promoting environmental stewardship, animal welfare, and community development. We strive to deliver exceptional products, foster innovation, and build lasting partnerships.</p>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Our Foundation</div>
+                <h2 class="section-title">Core Values</h2>
+                <p class="section-subtitle">The principles that drive our commitment to excellence</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>Embracing modern technologies to improve productivity and sustainability in all our farming operations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⭐</div>
+                    <h3>Quality</h3>
+                    <p>Maintaining superior standards in all our farming and production processes to deliver excellence.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Customer Satisfaction</h3>
+                    <p>Building trust through reliable service and consistent product excellence that exceeds expectations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌾</div>
+                    <h3>Community Nourishment</h3>
+                    <p>Supporting food security and local development to strengthen communities across South Africa.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Sustainability</h3>
+                    <p>Ensuring our practices benefit both people and the environment for generations to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">What We Do</div>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive agricultural solutions across poultry, livestock, and crop production</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image poultry-bg">
+                        <div class="service-gradient"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Poultry Services</h3>
+                        <ul class="service-list">
+                            <li>Broiler Production</li>
+                            <li>Layer Farming</li>
+                            <li>Poultry Breeding</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image livestock-bg">
+                        <div class="service-gradient"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Livestock Services</h3>
+                        <ul class="service-list">
+                            <li>Cattle Farming</li>
+                            <li>Sheep and Goat Farming</li>
+                            <li>Pig Farming</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image crop-bg">
+                        <div class="service-gradient"></div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Crop Services</h3>
+                        <ul class="service-list">
+                            <li>Vegetable Farming</li>
+                            <li>Crop Planning and Management</li>
+                            <li>Irrigation System Installation</li>
+                            <li>Crop Protection and Pest Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Let's Connect</div>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to partner with us? Reach out and let's discuss your agricultural needs</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info-section">
+                    <div class="contact-info-card">
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">📞</div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <a href="tel:0721421171">072 142 1171</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">✉️</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:info@shaunydonny.co.za">info@shaunydonny.co.za</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">📍</div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>South Africa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+27 123 456 789">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea placeholder="Tell us about your agricultural needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button"><span>Send Message</span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Shauny and Donny Tradings and Projects (Pty) Ltd. All rights reserved.</p>
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for reaching out! We will get back to you shortly.');
+            event.target.reset();
+        }
 
-        // Smooth scrolling for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
         });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
