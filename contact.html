@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Shauny and Donny Trading and Projects</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Contact Us - Shauny and Donny Tradings and Projects (Pty) Ltd</title>
     <style>
         * {
             margin: 0;
@@ -13,747 +12,1035 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-            color: #fff;
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            background: #0a0a0a;
         }
 
-        header {
-            background: rgba(10, 10, 10, 0.95);
-            padding: 20px 0;
+        /* Modern Gradient Color Scheme */
+        :root {
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --gradient-6: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            --gradient-green: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --gradient-orange: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%);
+            --gradient-purple: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-light: #ffffff;
+            --text-dark: #1a1a1a;
+        }
+
+        /* Navigation */
+        nav {
             position: fixed;
             width: 100%;
-            top: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem 5%;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid #00d4ff;
-            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
+        nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 30px;
+            max-width: 1600px;
+            margin: 0 auto;
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #00d4ff;
-            letter-spacing: 1px;
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        nav ul {
             display: flex;
-            align-items: center;
-        }
-
-        .logo i {
-            margin-right: 10px;
-            font-size: 32px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
             list-style: none;
+            gap: 2.5rem;
         }
 
-        .nav-links a {
-            color: #fff;
+        nav a {
+            color: var(--text-light);
             text-decoration: none;
-            font-size: 16px;
-            position: relative;
-            padding: 5px 0;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
             font-weight: 500;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00d4ff;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #00d4ff;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .contact-hero {
-            margin-top: 80px;
-            min-height: 40vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 20px;
             position: relative;
             overflow: hidden;
         }
 
-        .contact-hero-bg {
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-green);
+            transition: left 0.3s ease;
+            z-index: -1;
+            border-radius: 30px;
+        }
+
+        nav a:hover::before {
+            left: 0;
+        }
+
+        nav a:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            padding: 0 5%;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            top: -25%;
+            left: -25%;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-bg-image {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            opacity: 0.2;
-            z-index: -1;
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.8)), 
+                        url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1600') center/cover;
+            opacity: 1;
+            z-index: 0;
         }
 
-        .contact-hero-content {
-            max-width: 900px;
-            z-index: 1;
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 8s ease-in-out infinite;
         }
 
-        .contact-hero h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--gradient-green);
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--gradient-orange);
+            bottom: 20%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: var(--gradient-4);
+            top: 50%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            background: var(--gradient-green);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            letter-spacing: -2px;
         }
 
-        .contact-hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            color: #e0e0e0;
-            line-height: 1.6;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
         }
 
-        section {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 30px;
-        }
-
-        h2 {
-            font-size: 42px;
-            margin-bottom: 40px;
-            text-align: center;
-            color: #00d4ff;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: #00d4ff;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .contact-info {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-        }
-
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 30px;
-            color: #00d4ff;
+        .hero-badges {
             display: flex;
-            align-items: center;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
         }
 
-        .contact-info h3 i {
-            margin-right: 10px;
-        }
-
-        .contact-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: rgba(0, 212, 255, 0.05);
-            border-radius: 10px;
-            transition: all 0.3s;
-            border-left: 3px solid transparent;
-        }
-
-        .contact-item:hover {
-            background: rgba(0, 212, 255, 0.1);
-            border-left-color: #00d4ff;
-            transform: translateX(10px);
-        }
-
-        .contact-item strong {
-            color: #00d4ff;
-            display: block;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-
-        .contact-item a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: #00d4ff;
-        }
-
-        .contact-form {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 15px;
+        .badge {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            background: var(--card-bg);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #00d4ff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
             font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            color: #fff;
-            font-size: 16px;
-            transition: all 0.3s;
+        .badge:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .form-control:focus {
-            outline: none;
-            border-color: #00d4ff;
-            box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 15px 40px;
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
-            color: #fff;
+            padding: 1.2rem 3rem;
+            background: var(--gradient-green);
+            color: white;
             text-decoration: none;
-            border: none;
             border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(17, 153, 142, 0.4);
             position: relative;
             overflow: hidden;
-            width: 100%;
         }
 
         .cta-button::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+            transition: left 0.4s ease;
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
         }
 
         .cta-button:hover::before {
-            width: 300px;
-            height: 300px;
+            left: 0;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(17, 153, 142, 0.6);
         }
 
-        .map-section {
-            margin-top: 80px;
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 8rem 5%;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--gradient-green);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600') center/cover;
+            opacity: 0.05;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contact-info-section {
+            position: relative;
+        }
+
+        .contact-info-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 20px;
+            background: var(--gradient-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon-wrapper {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .contact-details h4 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details a,
+        .contact-details p {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: white;
+        }
+
+        .business-hours {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .business-hours h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hours-list .day {
+            font-weight: 600;
+            color: white;
+        }
+
+        .hours-list .time {
+            font-weight: 500;
+        }
+
+        .contact-form-wrapper {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: rgba(17, 153, 142, 0.6);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 4px rgba(17, 153, 142, 0.1);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.3rem;
+            background: var(--gradient-green);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(17, 153, 142, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+            transition: left 0.4s ease;
+        }
+
+        .submit-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .submit-button:hover::before {
+            left: 0;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(17, 153, 142, 0.6);
+        }
+
+        /* FAQ Section */
+        #faq {
+            background: var(--dark-bg);
+            position: relative;
+        }
+
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .faq-question {
+            padding: 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 2rem 2rem;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Map Section */
+        #map {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            padding: 6rem 5%;
+            position: relative;
         }
 
         .map-container {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
+            background: var(--card-bg);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            margin-top: 30px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            height: 500px;
+            position: relative;
         }
 
         .map-placeholder {
-            height: 400px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 154, 204, 0.1) 100%);
-            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(17, 153, 142, 0.1) 0%, rgba(56, 239, 125, 0.1) 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            color: white;
             text-align: center;
-            padding: 40px;
-        }
-
-        .map-placeholder i {
-            font-size: 60px;
-            color: #00d4ff;
-            margin-bottom: 20px;
+            padding: 2rem;
         }
 
         .map-placeholder h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #fff;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .map-placeholder p {
-            color: #ccc;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
             max-width: 500px;
         }
 
-        .business-hours {
-            margin-top: 40px;
-        }
-
-        .hours-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        .hours-table tr {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .hours-table tr:last-child {
-            border-bottom: none;
-        }
-
-        .hours-table td {
-            padding: 15px 10px;
-        }
-
-        .hours-table td:first-child {
-            font-weight: 500;
-            color: #00d4ff;
-        }
-
-        .hours-table td:last-child {
-            text-align: right;
-            color: #ccc;
-        }
-
-        .emergency-contact {
-            background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(204, 0, 0, 0.1) 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 0, 0, 0.3);
-            margin-top: 40px;
+        /* Footer */
+        footer {
+            background: #050505;
+            color: rgba(255, 255, 255, 0.6);
             text-align: center;
+            padding: 3rem 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .emergency-contact h3 {
-            color: #ff4444;
-            margin-bottom: 15px;
-            font-size: 22px;
+        footer p {
+            font-size: 0.95rem;
         }
 
-        .emergency-contact p {
-            color: #e0e0e0;
-            margin-bottom: 20px;
-        }
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
 
-        .emergency-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #ff4444, #cc0000);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
 
-        .emergency-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
-        }
-
-         footer {
-            background: rgba(10, 10, 10, 0.95);
-            text-align: center;
-            padding: 60px 40px 40px;
-            margin-top: 80px;
-            border-top: 2px solid #00d4ff;
-        }
-
-        .footer-logo-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-logo img {
-            height: 180px;
-            width: auto;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .footer-logo img:hover {
-            transform: scale(1.05);
-        }
-
-        .footer-logo-text {
-            font-size: 28px;
-            font-weight: bold;
-            color: #00d4ff;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .footer-logo-subtitle {
-            font-size: 18px;
-            color: #ccc;
-            text-align: center;
-            max-width: 600px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: left;
-        }
-
-        .footer-section h3 {
-            color: #00d4ff;
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-
-        .footer-section p, .footer-section a {
-            color: #ccc;
-            margin-bottom: 10px;
-            display: block;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: #00d4ff;
-        }
-
-        .copyright {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #999;
+            .section-title {
+                font-size: 2.8rem;
+            }
         }
 
         @media (max-width: 768px) {
-            .contact-hero h1 {
-                font-size: 36px;
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            
-            .contact-hero p {
-                font-size: 18px;
+
+            .section-title {
+                font-size: 2.2rem;
             }
-            
-            .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
+
+            nav ul {
+                display: none;
             }
-            
-            h2 {
-                font-size: 32px;
+
+            .hero-badges {
+                flex-direction: column;
             }
-            
-            .contact-info, .contact-form {
-                padding: 30px;
+
+            .contact-info-card,
+            .business-hours,
+            .contact-form-wrapper {
+                padding: 2rem;
             }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <header id="header">
-        <nav>
-            <div class="logo">
-                <i ></i><a><img src="assets/shany&donnyLogo.png" height="80" width="80"></a>
-               
-            </div>
-            <ul class="nav-links">
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">S&D</div>
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <section class="contact-hero">
-        <div class="contact-hero-bg"></div>
-        <div class="contact-hero-content">
-            <h1>Get In Touch</h1>
-            <p>We're here to help with your construction, maintenance, and project management needs. Reach out to us today for a consultation.</p>
         </div>
-    </section>
+    </nav>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3><i class="fas fa-info-circle"></i> Contact Information</h3>
-                
-                <div class="contact-item">
-                    <strong><i class="fas fa-map-marker-alt"></i> Registered Office</strong>
-                    1 Grobbler Street, Westerburg<br>
-                    Polokwane, Limpopo, 0699
-                </div>
-                
-                <div class="contact-item">
-                    <strong><i class="fas fa-map-marker-alt"></i> Company Location of Records</strong>
-                    1 Grobbler Street, Westerburg<br>
-                    Polokwane, Limpopo, 0699
-                </div>
-                
-                <div class="contact-item">
-                    <strong><i class="fas fa-phone"></i> Phone</strong>
-                    <a href="tel:+27123456789">+27 12 345 6789</a>
-                </div>
-                
-                <div class="contact-item">
-                    <strong><i class="fas fa-envelope"></i> Email</strong>
-                    <a href="mailto:info@shaunyanddonny.co.za">info@shaunyanddonny.co.za</a>
-                </div>
-                
-                <div class="contact-item">
-                    <strong><i class="fas fa-file-contract"></i> Registration Number</strong>
-                    2025/511366/07
-                </div>
-                
-                <div class="contact-item">
-                    <strong><i class="fas fa-certificate"></i> B-BBEE Status</strong>
-                    Exempted Micro Enterprise
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <h3><i class="fas fa-paper-plane"></i> Send Us a Message</h3>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" class="form-control" placeholder="Your full name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" placeholder="Your email address" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" class="form-control" placeholder="Your phone number">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="service">Service Interested In</label>
-                        <select id="service" class="form-control">
-                            <option value="">Select a service</option>
-                            <option value="construction">Building & Construction</option>
-                            <option value="cleaning">Cleaning Services</option>
-                            <option value="maintenance">Maintenance Services</option>
-                            <option value="project-management">Project Management</option>
-                            <option value="landscaping">Landscaping</option>
-                            <option value="trading">General Trading</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" class="form-control" placeholder="Tell us about your project or inquiry" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="cta-button">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section class="business-hours">
-        <h2>Business Hours</h2>
-        <div class="contact-info">
-            <table class="hours-table">
-                <tr>
-                    <td>Monday - Friday</td>
-                    <td>8:00 AM - 5:00 PM</td>
-                </tr>
-                <tr>
-                    <td>Saturday</td>
-                    <td>9:00 AM - 1:00 PM</td>
-                </tr>
-                <tr>
-                    <td>Sunday</td>
-                    <td>Closed</td>
-                </tr>
-                <tr>
-                    <td>Public Holidays</td>
-                    <td>Closed</td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section class="map-section">
-        <h2>Our Location</h2>
-        <div class="map-container">
-            <div class="map-placeholder">
-                <i class="fas fa-map-marked-alt"></i>
-                <h3>Visit Our Office</h3>
-                <p>Our registered office is located at 1 Grobbler Street, Westerburg, Polokwane, Limpopo. Feel free to visit us during business hours for a consultation about your project needs.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="emergency-contact">
-        <h3><i class="fas fa-exclamation-triangle"></i> Emergency Services</h3>
-        <p>For urgent maintenance or emergency construction needs outside of business hours, please contact our emergency line.</p>
-        <a href="tel:+27831234567" class="emergency-button">Emergency: +27 83 123 4567</a>
-    </section>
-
-   <footer>
-        <div class="footer-logo-section">
-            <div class="footer-logo">
-                <img src="assets/shany&donnyLogo.png" alt="Shauny and Donny Logo">
-                <div class="footer-logo-text">Shauny and Donny Trading and Projects (Pty) Ltd</div>
-                <div class="footer-logo-subtitle">Building Excellence, Delivering Results</div>
-            </div>
-        </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-image"></div>
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
         
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 1 Grobbler Street, Westerburg, Polokwane, Limpopo, 0699</p>
-                <p><i class="fas fa-phone"></i> +27 12 345 6789</p>
-                <p><i class="fas fa-envelope"></i> info@shaunyanddonny.co.za</p>
+        <div class="hero-content">
+            <h1>Get In Touch</h1>
+            <p class="subtitle">Ready to partner with us? Let's discuss your agricultural needs and find the perfect solutions</p>
+            
+            <div class="hero-badges">
+                <div class="badge">📞 Quick Response</div>
+                <div class="badge">💬 Expert Consultation</div>
+                <div class="badge">🌱 Sustainable Solutions</div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <p>Registration: 2025/511366/07</p>
-                <p>B-BBEE: Exempted Micro Enterprise</p>
-                <p>VAT: Not Registered</p>
+
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button"><span>Contact Us Now</span></a>
+                <a href="tel:0721421171" class="cta-button cta-secondary"><span>Call Directly</span></a>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2025 Shauny and Donny Trading and Projects (Pty) Ltd. All rights reserved.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Let's Connect</div>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">We're here to help with all your agricultural needs. Reach out and let's start a conversation.</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info-section">
+                    <div class="contact-info-card">
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">📞</div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <a href="tel:0721421171">072 142 1171</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">✉️</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:info@shaunydonny.co.za">info@shaunydonny.co.za</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">📍</div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>South Africa</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">🕒</div>
+                            <div class="contact-details">
+                                <h4>Response Time</h4>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-hours">
+                        <h3>Business Hours</h3>
+                        <ul class="hours-list">
+                            <li>
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">8:00 AM - 5:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Saturday</span>
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Sunday</span>
+                                <span class="time">Closed</span>
+                            </li>
+                            <li>
+                                <span class="day">Emergency Services</span>
+                                <span class="time">24/7 Available</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+27 123 456 789">
+                        </div>
+                        <div class="form-group">
+                            <label>Service Interest *</label>
+                            <select required>
+                                <option value="">Select a service</option>
+                                <option value="poultry">Poultry Services</option>
+                                <option value="livestock">Livestock Services</option>
+                                <option value="crops">Crop Services</option>
+                                <option value="multiple">Multiple Services</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Project Scale</label>
+                            <select>
+                                <option value="">Select project scale</option>
+                                <option value="small">Small Scale</option>
+                                <option value="medium">Medium Scale</option>
+                                <option value="large">Large Scale</option>
+                                <option value="commercial">Commercial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <textarea placeholder="Tell us about your agricultural project, requirements, or any questions you might have..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button"><span>Send Message</span></button>
+                    </form>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Help Center</div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find quick answers to common questions about our services and processes</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What areas in South Africa do you serve?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We serve clients across South Africa, with a strong presence in major agricultural regions. Our services are available nationwide, and we can arrange consultations and site visits regardless of location.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How quickly can you start a new project?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        After initial consultation and agreement, we can typically begin small to medium projects within 1-2 weeks. Larger commercial projects may require 3-4 weeks for proper planning and resource allocation.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer emergency services for livestock?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we provide 24/7 emergency services for critical livestock situations. Our team is available for urgent consultations and on-site assistance for animal health emergencies.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What makes your poultry services different?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Our poultry services combine traditional expertise with modern technology, focusing on sustainable practices, animal welfare, and optimal production efficiency. We provide comprehensive solutions from breeding to market-ready products.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can you help with agricultural funding applications?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        While we don't directly provide funding, we assist clients with business plans, project proposals, and documentation needed for agricultural funding applications through various government and private sector programs.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Find Us</div>
+                <h2 class="section-title">Service Area</h2>
+                <p class="section-subtitle">We proudly serve clients across South Africa with our comprehensive agricultural solutions</p>
+            </div>
+
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <h3>Nationwide Service Coverage</h3>
+                    <p>Shauny and Donny Tradings and Projects provides agricultural services across South Africa. While based in South Africa, our expertise reaches clients in all major agricultural regions.</p>
+                    <div class="cta-buttons">
+                        <a href="tel:0721421171" class="cta-button"><span>Call for Location Details</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Shauny and Donny Tradings and Projects (Pty) Ltd. All rights reserved. | Phone: 072 142 1171 | Email: info@shaunydonny.co.za</p>
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+            event.target.reset();
+        }
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
         });
 
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-            
-            // In a real application, you would send this data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you ${name}! Your message has been sent. We will contact you at ${email} regarding ${service || 'your inquiry'} soon.`);
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Smooth scrolling for anchor links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
         });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
